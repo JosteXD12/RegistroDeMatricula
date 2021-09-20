@@ -19,6 +19,21 @@ namespace CapaPresentacion
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Principal());
         }
+        public static void verficacionNumero(KeyPressEventArgs e)
+        {
+            if(!char.IsDigit(e.KeyChar) && (e.KeyChar)!= 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        public static void verficacionLetras(KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
 
         public static void PropiedadesDataGried(DataGridView dgv)
         {

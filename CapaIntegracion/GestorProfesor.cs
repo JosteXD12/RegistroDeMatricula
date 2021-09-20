@@ -52,6 +52,12 @@ namespace Resgistro_de_Matricula.CapaIntegracion
             using (ServicioProfesor elProfesor = new ServicioProfesor())
                 return elProfesor.consultarProfesor(Profesor_id);
         }
+        public DataSet ActivarProfesor(int Profesor_id)
+        {
+
+            using (ServicioProfesor elProfesor = new ServicioProfesor())
+                return elProfesor.ActivarProfesor(Profesor_id);
+        }
 
         public DataTable ListarProfesor()
         {

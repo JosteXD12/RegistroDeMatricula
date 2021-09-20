@@ -26,7 +26,7 @@ namespace CapaPresentacion
 
         private void gestorProfesorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmProfesor GesFrmprofesor = new frmProfesor();
+            FrmProfesor GesFrmprofesor = new FrmProfesor();
 
             GesFrmprofesor.ShowDialog();
         }

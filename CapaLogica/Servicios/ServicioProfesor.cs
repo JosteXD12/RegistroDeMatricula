@@ -117,6 +117,19 @@ namespace Resgistro_de_Matricula.CapaLogica.Servicios
             this.cerrarconexion();
             return miDataSet;
         }
+        public DataSet ActivarProfesor(int Profesor_id)
+        {
+            miComando.CommandText = "ActivarProfesor";
+            miComando.Parameters.AddWithValue(@"Profesor_id", SqlDbType.Int);
+            miComando.Parameters["Profesor_id"].Value = Profesor_id;
+
+            DataSet miDataSet = new DataSet();
+            this.abrirconexion();
+            miDataSet = this.SeleccinarInformacion(miComando);
+
+            this.cerrarconexion();
+            return miDataSet;
+        }
         public DataTable ListarProfesor()
         {
             miComando = new SqlCommand();

@@ -52,6 +52,7 @@
     <Compile Include="LogicaNegocio\Horario.cs" />
     <Compile Include="LogicaNegocio\Matricula.cs" />
     <Compile Include="LogicaNegocio\Profesor.cs" />
+    <Compile Include="LogicaNegocio\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Servicios\ServicioAula.cs" />
     <Compile Include="Servicios\ServicioCurso.cs" />
@@ -60,6 +61,7 @@
     <Compile Include="Servicios\ServicioHorario.cs" />
     <Compile Include="Servicios\ServicioMatricula.cs" />
     <Compile Include="Servicios\ServicioProfesor.cs" />
+    <Compile Include="Servicios\ServicioUsuario.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

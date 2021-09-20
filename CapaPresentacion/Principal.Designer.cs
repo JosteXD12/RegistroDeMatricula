@@ -69,49 +69,49 @@ namespace CapaPresentacion
             // gestorProfesorToolStripMenuItem
             // 
             this.gestorProfesorToolStripMenuItem.Name = "gestorProfesorToolStripMenuItem";
-            this.gestorProfesorToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.gestorProfesorToolStripMenuItem.Size = new System.Drawing.Size(208, 26);
             this.gestorProfesorToolStripMenuItem.Text = "Gestor Profesor ";
             this.gestorProfesorToolStripMenuItem.Click += new System.EventHandler(this.gestorProfesorToolStripMenuItem_Click);
             // 
             // gestorToolStripMenuItem
             // 
             this.gestorToolStripMenuItem.Name = "gestorToolStripMenuItem";
-            this.gestorToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.gestorToolStripMenuItem.Size = new System.Drawing.Size(208, 26);
             this.gestorToolStripMenuItem.Text = "Gestor Matricula";
             this.gestorToolStripMenuItem.Click += new System.EventHandler(this.gestorToolStripMenuItem_Click);
             // 
             // gestorToolStripMenuItem1
             // 
             this.gestorToolStripMenuItem1.Name = "gestorToolStripMenuItem1";
-            this.gestorToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.gestorToolStripMenuItem1.Size = new System.Drawing.Size(208, 26);
             this.gestorToolStripMenuItem1.Text = "Gestor Horario";
             this.gestorToolStripMenuItem1.Click += new System.EventHandler(this.gestorToolStripMenuItem1_Click);
             // 
             // gestorToolStripMenuItem2
             // 
             this.gestorToolStripMenuItem2.Name = "gestorToolStripMenuItem2";
-            this.gestorToolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
+            this.gestorToolStripMenuItem2.Size = new System.Drawing.Size(208, 26);
             this.gestorToolStripMenuItem2.Text = "Gestor Grupo";
             this.gestorToolStripMenuItem2.Click += new System.EventHandler(this.gestorToolStripMenuItem2_Click);
             // 
             // gestorToolStripMenuItem3
             // 
             this.gestorToolStripMenuItem3.Name = "gestorToolStripMenuItem3";
-            this.gestorToolStripMenuItem3.Size = new System.Drawing.Size(224, 26);
+            this.gestorToolStripMenuItem3.Size = new System.Drawing.Size(208, 26);
             this.gestorToolStripMenuItem3.Text = "Gestor Estudiante";
             this.gestorToolStripMenuItem3.Click += new System.EventHandler(this.gestorToolStripMenuItem3_Click);
             // 
             // gestorCursoToolStripMenuItem
             // 
             this.gestorCursoToolStripMenuItem.Name = "gestorCursoToolStripMenuItem";
-            this.gestorCursoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.gestorCursoToolStripMenuItem.Size = new System.Drawing.Size(208, 26);
             this.gestorCursoToolStripMenuItem.Text = "Gestor Curso";
             this.gestorCursoToolStripMenuItem.Click += new System.EventHandler(this.gestorCursoToolStripMenuItem_Click);
             // 
             // aulaAulaToolStripMenuItem
             // 
             this.aulaAulaToolStripMenuItem.Name = "aulaAulaToolStripMenuItem";
-            this.aulaAulaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.aulaAulaToolStripMenuItem.Size = new System.Drawing.Size(208, 26);
             this.aulaAulaToolStripMenuItem.Text = "Aula Aula";
             this.aulaAulaToolStripMenuItem.Click += new System.EventHandler(this.aulaAulaToolStripMenuItem_Click);
             // 
