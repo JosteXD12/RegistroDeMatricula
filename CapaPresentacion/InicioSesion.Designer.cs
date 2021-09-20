@@ -31,20 +31,20 @@ namespace CapaPresentacion
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InicioSesion));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblUsuario = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblLogin = new System.Windows.Forms.Label();
+            this.Login = new System.Windows.Forms.PictureBox();
+            this.password = new System.Windows.Forms.PictureBox();
             this.Usuario = new System.Windows.Forms.PictureBox();
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.password = new System.Windows.Forms.PictureBox();
-            this.Login = new System.Windows.Forms.PictureBox();
-            this.lblLogin = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblUsuario = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Usuario)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.password)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Login)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Login)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.password)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Usuario)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -66,47 +66,34 @@ namespace CapaPresentacion
             this.panel1.Size = new System.Drawing.Size(640, 476);
             this.panel1.TabIndex = 3;
             // 
-            // Usuario
+            // label2
             // 
-            this.Usuario.Image = ((System.Drawing.Image)(resources.GetObject("Usuario.Image")));
-            this.Usuario.Location = new System.Drawing.Point(434, 200);
-            this.Usuario.Name = "Usuario";
-            this.Usuario.Size = new System.Drawing.Size(54, 51);
-            this.Usuario.TabIndex = 6;
-            this.Usuario.TabStop = false;
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(115, 311);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(89, 19);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Contraseña";
             // 
-            // txtContraseña
+            // lblUsuario
             // 
-            this.txtContraseña.Location = new System.Drawing.Point(218, 294);
-            this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.Size = new System.Drawing.Size(214, 26);
-            this.txtContraseña.TabIndex = 5;
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.ForeColor = System.Drawing.Color.White;
+            this.lblUsuario.Location = new System.Drawing.Point(150, 228);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(62, 19);
+            this.lblUsuario.TabIndex = 11;
+            this.lblUsuario.Text = "Usuario";
             // 
-            // txtUsuario
+            // pictureBox1
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(218, 225);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(207, 26);
-            this.txtUsuario.TabIndex = 4;
-            // 
-            // password
-            // 
-            this.password.Image = ((System.Drawing.Image)(resources.GetObject("password.Image")));
-            this.password.Location = new System.Drawing.Point(438, 270);
-            this.password.Name = "password";
-            this.password.Size = new System.Drawing.Size(50, 50);
-            this.password.TabIndex = 7;
-            this.password.TabStop = false;
-            // 
-            // Login
-            // 
-            this.Login.Image = ((System.Drawing.Image)(resources.GetObject("Login.Image")));
-            this.Login.Location = new System.Drawing.Point(286, 348);
-            this.Login.Name = "Login";
-            this.Login.Size = new System.Drawing.Size(62, 59);
-            this.Login.TabIndex = 8;
-            this.Login.TabStop = false;
-            this.Login.Click += new System.EventHandler(this.Login_Click);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(247, 25);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(178, 134);
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
             // 
             // lblLogin
             // 
@@ -119,34 +106,47 @@ namespace CapaPresentacion
             this.lblLogin.TabIndex = 9;
             this.lblLogin.Text = "Inicio Sesion";
             // 
-            // pictureBox1
+            // Login
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(260, 61);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(122, 98);
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
+            this.Login.Image = ((System.Drawing.Image)(resources.GetObject("Login.Image")));
+            this.Login.Location = new System.Drawing.Point(284, 361);
+            this.Login.Name = "Login";
+            this.Login.Size = new System.Drawing.Size(79, 69);
+            this.Login.TabIndex = 8;
+            this.Login.TabStop = false;
+            this.Login.Click += new System.EventHandler(this.Login_Click);
             // 
-            // lblUsuario
+            // password
             // 
-            this.lblUsuario.AutoSize = true;
-            this.lblUsuario.ForeColor = System.Drawing.Color.White;
-            this.lblUsuario.Location = new System.Drawing.Point(150, 228);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(62, 19);
-            this.lblUsuario.TabIndex = 11;
-            this.lblUsuario.Text = "Usuario";
+            this.password.Image = ((System.Drawing.Image)(resources.GetObject("password.Image")));
+            this.password.Location = new System.Drawing.Point(434, 279);
+            this.password.Name = "password";
+            this.password.Size = new System.Drawing.Size(69, 55);
+            this.password.TabIndex = 7;
+            this.password.TabStop = false;
             // 
-            // label2
+            // Usuario
             // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(123, 297);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 19);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Contraseña";
+            this.Usuario.Image = ((System.Drawing.Image)(resources.GetObject("Usuario.Image")));
+            this.Usuario.Location = new System.Drawing.Point(434, 200);
+            this.Usuario.Name = "Usuario";
+            this.Usuario.Size = new System.Drawing.Size(64, 51);
+            this.Usuario.TabIndex = 6;
+            this.Usuario.TabStop = false;
+            // 
+            // txtContraseña
+            // 
+            this.txtContraseña.Location = new System.Drawing.Point(214, 308);
+            this.txtContraseña.Name = "txtContraseña";
+            this.txtContraseña.Size = new System.Drawing.Size(214, 26);
+            this.txtContraseña.TabIndex = 5;
+            // 
+            // txtUsuario
+            // 
+            this.txtUsuario.Location = new System.Drawing.Point(218, 225);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(207, 26);
+            this.txtUsuario.TabIndex = 4;
             // 
             // InicioSesion
             // 
@@ -155,14 +155,15 @@ namespace CapaPresentacion
             this.ClientSize = new System.Drawing.Size(640, 476);
             this.Controls.Add(this.panel1);
             this.Name = "InicioSesion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InicioSesion";
             this.Load += new System.EventHandler(this.InicioSesion_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Usuario)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.password)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Login)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Login)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.password)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Usuario)).EndInit();
             this.ResumeLayout(false);
 
         }

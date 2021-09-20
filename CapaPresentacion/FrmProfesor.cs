@@ -14,15 +14,21 @@ namespace CapaPresentacion
     public partial class FrmProfesor : Form
 
     {
+        string Area;
         DataSet dsProfesor = new DataSet();
         DataTable dtProfesor = new DataTable();
-        public FrmProfesor()
+        public FrmProfesor(string Area)
         {
+            this.Area = Area;
             InitializeComponent();
         }
 
         private void FrmProfesor_Load(object sender, EventArgs e)
         {
+            if(Area != "A1")
+            {
+                gpbProfesor_Admin.Visible = false;
+            }
             Program.PropiedadesDataGried(dgv_admin);
             Program.PropiedadesDataGried(dvgProfesores);
             CargarGridProfesor();

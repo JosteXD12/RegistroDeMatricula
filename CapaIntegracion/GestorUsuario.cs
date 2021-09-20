@@ -12,14 +12,15 @@ namespace CapaIntegracion
 {
     public class GestorUsuario : servicio, IDisposable
     {
-        public GestorUsuario()
-        {
-
-        }
         public void Dispose()
         {
 
         }
+        public GestorUsuario()
+        {
+
+        }
+ 
 
         public DataSet Login(String Nick, string Contraseña)
         {

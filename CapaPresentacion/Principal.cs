@@ -12,55 +12,140 @@ namespace CapaPresentacion
 {
     public partial class Principal : Form
     {
-        public Principal()
+        string Nombre;
+            string Area;
+        public Principal(DataTable datos)
         {
+            this.Nombre = datos.Rows[0]["Usuario_nombre"].ToString();
+            this.Area = datos.Rows[0]["Usuario_area"].ToString();
+
+
             InitializeComponent();
         }
 
-        private void gestorToolStripMenuItem3_Click(object sender, EventArgs e)
+        private void NodoHijo(object FormNodoHijo)
+        {
+            if(this.Ventana_Muestra.Controls.Count > 0)
+            {
+                this.Ventana_Muestra.Controls.RemoveAt(0);
+               
+            }
+            Form fh = FormNodoHijo as Form;
+            fh.TopLevel = false;
+            fh.Dock = DockStyle.Fill;
+            this.Ventana_Muestra.Controls.Add(fh);
+            this.Ventana_Muestra.Tag = fh;
+            fh.Show();
+
+
+        }
+        
+
+        private void PicBox_Profesor_Click(object sender, EventArgs e)
+        {
+            NodoHijo(new FrmProfesor(Area));
+        }
+
+        private void pictureBox_Estudiante_Click_1(object sender, EventArgs e)
         {
             FrmEstudiante GesFrmEstudiante = new FrmEstudiante();
 
             GesFrmEstudiante.ShowDialog();
         }
 
-        private void gestorProfesorToolStripMenuItem_Click(object sender, EventArgs e)
+        private void pictureBox_Curso_Click_1(object sender, EventArgs e)
         {
-            FrmProfesor GesFrmprofesor = new FrmProfesor();
+            frmCurso GesFrmCurso = new frmCurso();
 
-            GesFrmprofesor.ShowDialog();
+            GesFrmCurso.ShowDialog();
         }
 
-        private void gestorToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void aulaAulaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmAula GesFrmAula = new frmAula();
-
-                        GesFrmAula.ShowDialog();
-        }
-
-        private void gestorToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            frmHorario GesFrmHorario = new frmHorario();
-
-            GesFrmHorario.ShowDialog();
-        }
-
-        private void gestorToolStripMenuItem2_Click(object sender, EventArgs e)
+        private void pictureBox_Grupo_Click_1(object sender, EventArgs e)
         {
             frmGrupo GesFrmGrupo = new frmGrupo();
 
             GesFrmGrupo.ShowDialog();
         }
 
-        private void gestorCursoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void pictureBox_Aula_Click_1(object sender, EventArgs e)
         {
-            frmCurso GesFrmCurso = new frmCurso();
+            frmAula GesFrmAula = new frmAula();
 
-            GesFrmCurso.ShowDialog();
+            GesFrmAula.ShowDialog();
+        }
+
+        private void pictureBox_Horario_Click_1(object sender, EventArgs e)
+        {
+            frmHorario GesFrmHorario = new frmHorario();
+
+            GesFrmHorario.ShowDialog();
+        }
+
+        private void pictureBox_Matricula_Click_1(object sender, EventArgs e)
+        {
+
+        }
+        private void pictureBox_Reportes_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox_logout_Click_1(object sender, EventArgs e)
+        { 
+            M_Modulos.Visible = false;
+            InicioSesion inse = new InicioSesion();
+            inse.ShowDialog();
+           
+        }
+
+        private void lblPicbox_profesor_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label_Estudiante_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label_Curso_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label_Grupo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label_Aula_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label_Horario_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label_Matricula_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label_Reporte_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label_LogOut_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Principal_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
