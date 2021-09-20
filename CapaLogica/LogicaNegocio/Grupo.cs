@@ -40,7 +40,7 @@ namespace Resgistro_de_Matricula.CapaLogica.LogicaNegocio
         /// <param name="Pgrupo_estado"></param>
         public Grupo(int Pgrupo_id, string Pgrupo_descripcion, string Pgrupo_estado)
         {
-            Grupo_id = grupo_id;
+            Grupo_id = Pgrupo_id;
             Grupo_descripcion = Pgrupo_descripcion;
             Grupo_estado = Pgrupo_estado;
         }

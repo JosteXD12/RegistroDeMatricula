@@ -42,7 +42,7 @@ namespace Resgistro_de_Matricula.CapaLogica.Servicios
             miComando.Parameters["Curso_cupo"].Value = elCurso.Curso_cupo;
 
             miComando.Parameters.Add("Curso_estado", System.Data.SqlDbType.VarChar);
-            miComando.Parameters["ECurso_estado"].Value = elCurso.Curso_estado;
+            miComando.Parameters["Curso_estado"].Value = elCurso.Curso_estado;
 
             respuesta = this.ejecutarsentencia(miComando);
 
@@ -56,8 +56,8 @@ namespace Resgistro_de_Matricula.CapaLogica.Servicios
         public string ModificarCurso(Curso elCurso)
         {
             miComando = new SqlCommand();
-            Console.WriteLine("Gestor Insertar Curso");
-            miComando.CommandText = "InsertarCurso";
+            Console.WriteLine("Gestor Modificar Curso");
+            miComando.CommandText = "ModificarCurso";
 
             miComando.Parameters.Add("Curso_id", System.Data.SqlDbType.Int);
             miComando.Parameters["Curso_id"].Value = elCurso.Curso_id;
@@ -72,7 +72,7 @@ namespace Resgistro_de_Matricula.CapaLogica.Servicios
             miComando.Parameters["Curso_cupo"].Value = elCurso.Curso_cupo;
 
             miComando.Parameters.Add("Curso_estado", System.Data.SqlDbType.VarChar);
-            miComando.Parameters["ECurso_estado"].Value = elCurso.Curso_estado;
+            miComando.Parameters["Curso_estado"].Value = elCurso.Curso_estado;
 
             respuesta = this.ejecutarsentencia(miComando);
 

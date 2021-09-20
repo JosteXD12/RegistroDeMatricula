@@ -29,7 +29,7 @@ namespace Resgistro_de_Matricula.CapaLogica.Servicios
         {
             miComando = new SqlCommand();
             Console.WriteLine("Gestor Insertar Grupo");
-            miComando.CommandText = "InsertaGrupo";
+            miComando.CommandText = "InsertarGrupo";
 
             miComando.Parameters.Add("Grupo_descripcion", System.Data.SqlDbType.VarChar);
             miComando.Parameters["Grupo_descripcion"].Value = elGrupo.Grupo_descripcion;
@@ -49,8 +49,8 @@ namespace Resgistro_de_Matricula.CapaLogica.Servicios
         public string ModificarGrupo(Grupo elGrupo)
         {
             miComando = new SqlCommand();
-            Console.WriteLine("Gestor Insertar Grupo");
-            miComando.CommandText = "InsertaGrupo";
+            Console.WriteLine("Gestor Modificar Grupo");
+            miComando.CommandText = "ModificarGrupo";
 
             miComando.Parameters.Add("Grupo_id", System.Data.SqlDbType.Int);
             miComando.Parameters["Grupo_id"].Value = elGrupo.Grupo_id;
@@ -66,7 +66,7 @@ namespace Resgistro_de_Matricula.CapaLogica.Servicios
             if (respuesta == "")
                 respuesta += "se ha realziado correctamente la transaccion Insertar Grupo";
 
-            Console.WriteLine("Fin del Servicio Insertar Grupo");
+            Console.WriteLine("Fin del Servicio Modificar Grupo");
             return respuesta;
         }
 

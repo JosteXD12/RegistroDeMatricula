@@ -32,6 +32,9 @@ namespace Resgistro_de_Matricula.CapaLogica.Servicios
             Console.WriteLine("Gestor Insertar Estudiante");
             miComando.CommandText = "InsertarEstudiante";
 
+            miComando.Parameters.Add("Grupo_id", System.Data.SqlDbType.Int);
+            miComando.Parameters["Grupo_id"].Value = elEstudiante.Grupo_id;
+            
             miComando.Parameters.Add("Estudiante_cedula", System.Data.SqlDbType.VarChar);
             miComando.Parameters["Estudiante_cedula"].Value = elEstudiante.Estudiante_cedula;
 
@@ -68,11 +71,14 @@ namespace Resgistro_de_Matricula.CapaLogica.Servicios
         public string ModificarEstudiante(Estudiante elEstudiante)
         {
             miComando = new SqlCommand();
-            Console.WriteLine("Gestor Insertar Estudiante");
+            Console.WriteLine("Gestor modificar Estudiante");
             miComando.CommandText = "ModificarEstudiante";
 
             miComando.Parameters.Add("Estudiante_id", System.Data.SqlDbType.Int);
             miComando.Parameters["Estudiante_id"].Value = elEstudiante.Estudiante_id;
+
+            miComando.Parameters.Add("Grupo_id", System.Data.SqlDbType.Int);
+            miComando.Parameters["Grupo_id"].Value = elEstudiante.Grupo_id;
 
             miComando.Parameters.Add("Estudiante_cedula", System.Data.SqlDbType.VarChar);
             miComando.Parameters["Estudiante_cedula"].Value = elEstudiante.Estudiante_cedula;

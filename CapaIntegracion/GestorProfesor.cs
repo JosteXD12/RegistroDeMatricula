@@ -1,4 +1,4 @@
-﻿//mio
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +11,7 @@ using System.Data;
 
 namespace Resgistro_de_Matricula.CapaIntegracion
 {
-    public class GestorProfesor: servicio, IDisposable
+    public class GestorProfesor : servicio, IDisposable
     {
         public GestorProfesor()
         {
@@ -23,13 +23,14 @@ namespace Resgistro_de_Matricula.CapaIntegracion
 
         }
 
+
         public string InsertarProfesor(string Profesor_cedula, string Profesor_nombre, string Profesor_primerApellido,
-            string Profesor_segundoApellido, string Profesor_Telefono, string Profesor_correoElectronico, string Profesor_direccion,
-            string Profesor_estado)
+        string Profesor_segundoApellido, string Profesor_Telefono, string Profesor_correoElectronico, string Profesor_direccion,
+                            string Profesor_estado)
         {
             Profesor newProfesor = new Profesor(Profesor_cedula, Profesor_nombre, Profesor_primerApellido, Profesor_segundoApellido,
                 Profesor_Telefono, Profesor_correoElectronico, Profesor_direccion, Profesor_estado);
-           
+
             using (ServicioProfesor elProfesor = new ServicioProfesor())
                 return elProfesor.InsertarProfesor(newProfesor);
         }
@@ -53,10 +54,16 @@ namespace Resgistro_de_Matricula.CapaIntegracion
         }
 
         public DataTable ListarProfesor()
-        {   
+        {
 
             using (ServicioProfesor elProfesor = new ServicioProfesor())
                 return elProfesor.ListarProfesor();
+        }
+        public DataTable ListarInactivoProfesor()
+        {
+
+            using (ServicioProfesor elProfesor = new ServicioProfesor())
+                return elProfesor.ListarIncativoProfesor();
         }
 
         public string eliminarProfesor(int Profesor_id)

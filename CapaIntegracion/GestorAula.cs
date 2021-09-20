@@ -32,7 +32,7 @@ namespace Resgistro_de_Matricula.CapaIntegracion
             Aula newAula = new Aula(Aula_id, Aula_descripcion, Aula_capacidad, Aula_estado);
 
             using (ServicioAula elAula = new ServicioAula())
-                return elAula.insertarAula(newAula);
+                return elAula.ModificarAula(newAula);
         }
         public DataSet consultarAula(int Aula_Id)
         {

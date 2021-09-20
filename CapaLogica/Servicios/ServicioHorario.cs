@@ -33,7 +33,7 @@ namespace Resgistro_de_Matricula.CapaLogica.Servicios
             miComando.Parameters.Add("Horario_descripcion", System.Data.SqlDbType.VarChar);
             miComando.Parameters["Horario_descripcion"].Value = elHorario.Horario_descripcion;
 
-            miComando.Parameters.Add("CHorarario_dia", System.Data.SqlDbType.VarChar);
+            miComando.Parameters.Add("Horarario_dia", System.Data.SqlDbType.VarChar);
             miComando.Parameters["Horarario_dia"].Value = elHorario.Horarario_dia;
 
             miComando.Parameters.Add("Horario_horaInicio", System.Data.SqlDbType.VarChar);
@@ -66,7 +66,7 @@ namespace Resgistro_de_Matricula.CapaLogica.Servicios
             miComando.Parameters.Add("Horario_descripcion", System.Data.SqlDbType.VarChar);
             miComando.Parameters["Horario_descripcion"].Value = elHorario.Horario_descripcion;
 
-            miComando.Parameters.Add("CHorarario_dia", System.Data.SqlDbType.VarChar);
+            miComando.Parameters.Add("Horarario_dia", System.Data.SqlDbType.VarChar);
             miComando.Parameters["Horarario_dia"].Value = elHorario.Horarario_dia;
 
             miComando.Parameters.Add("Horario_horaInicio", System.Data.SqlDbType.VarChar);

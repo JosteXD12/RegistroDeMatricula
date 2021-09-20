@@ -32,7 +32,7 @@ namespace Resgistro_de_Matricula.CapaIntegracion
             Curso newCurso = new Curso(Curso_id, Curso_nombre, Curso_creditos, Curso_cupo, Curso_estado);
 
             using (ServicioCurso elCurso = new ServicioCurso())
-                return elCurso.InsertarCurso(newCurso);
+                return elCurso.ModificarCurso(newCurso);
         }
         public DataSet ConsultarCurso(int Curso_id)
         {

@@ -56,13 +56,25 @@ namespace Resgistro_de_Matricula.CapaConexion
                 this.abrirconexion(); 
                 miComando.ExecuteScalar();
             }
-
+            catch(SqlException ex)
+            {
+                StringBuilder errorMessages = new StringBuilder();
+                for (int i = 0; i < ex.Errors.Count; i++)
+                {
+                    errorMessages.Append("Index #" + i + "\n" +
+                        "Message: " + ex.Errors[i].Message + "\n" +
+                        "LineNumber: " + ex.Errors[i].LineNumber + "\n" +
+                        "Source: " + ex.Errors[i].Source + "\n" +
+                        "Procedure: " + ex.Errors[i].Procedure + "\n");
+                }
+            }
             catch(Exception error)
             {
                 this.cerrarconexion();
                 return error.Message;
             }
 
+           
             this.cerrarconexion();
             return "";
         }

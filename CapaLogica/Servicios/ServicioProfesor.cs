@@ -5,7 +5,6 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//Bibliteca 
 using Resgistro_de_Matricula.CapaConexion;
 using Resgistro_de_Matricula.CapaLogica.LogicaNegocio;
 
@@ -97,6 +96,7 @@ namespace Resgistro_de_Matricula.CapaLogica.Servicios
             miComando.Parameters.Add("Profesor_estado", System.Data.SqlDbType.VarChar);
             miComando.Parameters["Profesor_estado"].Value = elProfesor.Profesor_estado;
 
+            respuesta = this.ejecutarsentencia(miComando);
             if (respuesta == "")
                 respuesta += "se ha realziado correctamente la transaccion Modificar Profesor";
 
@@ -122,6 +122,20 @@ namespace Resgistro_de_Matricula.CapaLogica.Servicios
             miComando = new SqlCommand();
             Console.WriteLine("Gestor Listar Profesor");
             miComando.CommandText = "ListarProfesor";
+
+            DataSet elProfesor = new DataSet();
+            this.abrirconexion();
+            elProfesor = this.SeleccinarInformacion(miComando);
+            DataTable miTabla = elProfesor.Tables[0];
+
+            return miTabla;
+
+        }
+        public DataTable ListarIncativoProfesor()
+        {
+            miComando = new SqlCommand();
+            Console.WriteLine("Gestor Listar Inactivos Profesor");
+            miComando.CommandText = "ListarInactivoProfesor";
 
             DataSet elProfesor = new DataSet();
             this.abrirconexion();

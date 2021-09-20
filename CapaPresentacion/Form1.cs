@@ -77,7 +77,7 @@ namespace CapaPresentacion
 
         private void btnProfesor_Insertar_Click(object sender, EventArgs e)
         {
-            using(GestorProfesor elProfesor = new GestorProfesor())
+            using (GestorProfesor elProfesor = new GestorProfesor())
             {
                 elProfesor.InsertarProfesor(txtProfesor_Cedula.Text, txtProfesor_nombre.Text,
                     txtProfesor_PrimerApeliido.Text, txtProfesor_SegundoApeliido.Text, txtProfesor_telefono.Text,
@@ -85,13 +85,17 @@ namespace CapaPresentacion
             }
             CargarGridProfesor();
             CargarComboProfesor();
+            Limpiar();
 
         }
 
         private void frmProfesor_Load(object sender, EventArgs e)
         {
+            Program.PropiedadesDataGried(dgv_admin);
+            Program.PropiedadesDataGried(dvgProfesores);
             CargarGridProfesor();
             CargarComboProfesor();
+            CargarGridInactivosProfesor();
         }
 
         private void CargarGridProfesor()
@@ -99,7 +103,7 @@ namespace CapaPresentacion
             using (GestorProfesor elProfesor = new GestorProfesor())
             {
                 dvgProfesores.DataSource = elProfesor.ListarProfesor();
-                
+
                 dvgProfesores.Columns["Profesor_id"].Visible = false;
                 dvgProfesores.Columns["Profesor_cedula"].HeaderText = "Cédula";
                 dvgProfesores.Columns["Profesor_nombre"].HeaderText = "Nombre";
@@ -110,7 +114,7 @@ namespace CapaPresentacion
                 dvgProfesores.Columns["Profesor_direccion"].HeaderText = "Direccion";
                 dvgProfesores.Columns["Profesor_estado"].Visible = false;
             }
-                
+
         }
 
         private void CargarComboProfesor()
@@ -126,7 +130,7 @@ namespace CapaPresentacion
         private void BuscarProfesor()
         {
             int Profesor_id = int.Parse(cbxProfesor.SelectedValue.ToString());
-           
+
             using (GestorProfesor elProfesor = new GestorProfesor())
             {
                 this.dsProfesor = elProfesor.consultarProfesor(Profesor_id);
@@ -154,30 +158,45 @@ namespace CapaPresentacion
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
+            int getProfesorID;
             using (GestorProfesor elProfesor = new GestorProfesor())
             {
-                elProfesor.ModificarProfesor(int.Parse(cbxProfesor.SelectedValue.ToString()),txtProfesor_Cedula.Text, txtProfesor_nombre.Text,
+                if (dvgProfesores.CurrentCell != null && dvgProfesores.Rows.Count > 0)
+                {
+                    int numfila = dvgProfesores.CurrentCell.RowIndex;
+                    getProfesorID = int.Parse(dvgProfesores[0, numfila].Value.ToString());
+                    elProfesor.ModificarProfesor(getProfesorID, txtProfesor_Cedula.Text, txtProfesor_nombre.Text,
                     txtProfesor_PrimerApeliido.Text, txtProfesor_SegundoApeliido.Text, txtProfesor_telefono.Text,
                     txtProfesor_CorreoElectronico.Text, txtProfesor_Dirreccion.Text, "A");
+                }
+                else if (cbxProfesor.SelectedValue != null)
+                {
+                    elProfesor.ModificarProfesor(int.Parse(cbxProfesor.SelectedValue.ToString()), txtProfesor_Cedula.Text, txtProfesor_nombre.Text,
+                    txtProfesor_PrimerApeliido.Text, txtProfesor_SegundoApeliido.Text, txtProfesor_telefono.Text,
+                    txtProfesor_CorreoElectronico.Text, txtProfesor_Dirreccion.Text, "A");
+                }
+
             }
             CargarGridProfesor();
             CargarComboProfesor();
+            Limpiar();
         }
 
         private void dvgProfesores_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            try 
+            try
             {
 
                 int numFila = dvgProfesores.CurrentCell.RowIndex;
                 int Profesor_id = int.Parse(this.dvgProfesores[0, numFila].Value.ToString());
 
-                using(GestorProfesor elProfesor = new GestorProfesor())
+                using (GestorProfesor elProfesor = new GestorProfesor())
                 {
                     this.dsProfesor = elProfesor.consultarProfesor(Profesor_id);
                     this.dtProfesor = this.dsProfesor.Tables[0];
                 }
                 CargarDatosProfesor();
+                CargarComboProfesor();
 
             }
             catch (NullReferenceException)
@@ -186,5 +205,97 @@ namespace CapaPresentacion
                     MessageBoxButtons.YesNoCancel, MessageBoxIcon.Exclamation);
             }
         }
+
+        private void btnProfesora_Eliminar_Click(object sender, EventArgs e)
+        {
+            string opcion;
+            int getProfesorID;
+            opcion = MessageBox.Show("¿Esta seguro de eliminar la informacion?", " ",
+                 MessageBoxButtons.OKCancel, MessageBoxIcon.Question).ToString();
+            if (opcion == "OK")
+            {
+                using (GestorProfesor elProfesor = new GestorProfesor())
+                {
+                    if (dvgProfesores.CurrentCell != null && dvgProfesores.Rows.Count > 0)
+                    {
+                        int numfila = dvgProfesores.CurrentCell.RowIndex;
+                        getProfesorID = int.Parse(dvgProfesores[0, numfila].Value.ToString());
+
+                        elProfesor.inactivarProfesor(getProfesorID);
+
+                    }
+                    else if (cbxProfesor.SelectedValue != null)
+                    {
+                        elProfesor.inactivarProfesor(int.Parse(cbxProfesor.SelectedValue.ToString()));
+                    }
+                }
+            }
+            CargarGridProfesor();
+            CargarComboProfesor();
+            Limpiar();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int getProfesorID;
+            using (GestorProfesor elProfesor = new GestorProfesor())
+            {
+                if (dvgProfesores.CurrentCell != null && dvgProfesores.Rows.Count > 0)
+                {
+                    int numfila = dvgProfesores.CurrentCell.RowIndex;
+                    getProfesorID = int.Parse(dvgProfesores[0, numfila].Value.ToString());
+
+                    elProfesor.inactivarProfesor(getProfesorID);
+
+                }
+                else if (cbxProfesor.SelectedValue != null)
+                {
+                    elProfesor.inactivarProfesor(int.Parse(cbxProfesor.SelectedValue.ToString()));
+                }
+
+            }
+            CargarComboProfesor();
+            CargarGridProfesor();
+            Limpiar();
+        }
+
+        private void Limpiar()
+        {
+            txtProfesor_Cedula.Text = "";
+            txtProfesor_nombre.Text = "";
+            txtProfesor_PrimerApeliido.Text = "";
+            txtProfesor_SegundoApeliido.Text = "";
+            txtProfesor_telefono.Text = "";
+            txtProfesor_CorreoElectronico.Text = "";
+            txtProfesor_Dirreccion.Text = "";
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+        private void CargarGridInactivosProfesor()
+        {
+            using (GestorProfesor elProfesor = new GestorProfesor())
+            {
+                dgv_admin.DataSource = elProfesor.ListarInactivoProfesor();
+
+                dgv_admin.Columns["Profesor_id"].HeaderText = "ID";
+                dgv_admin.Columns["Profesor_cedula"].HeaderText = "Cédula";
+                dgv_admin.Columns["Profesor_nombre"].HeaderText = "Nombre";
+                dgv_admin.Columns["Profesor_primerApellido"].HeaderText = "Apellido";
+                dgv_admin.Columns["Profesor_segundoApellido"].HeaderText = "Apellido";
+                dgv_admin.Columns["Profesor_Telefono"].HeaderText = "Telefono";
+                dgv_admin.Columns["Profesor_correoElectronico"].HeaderText = "eMail";
+                dgv_admin.Columns["Profesor_direccion"].HeaderText = "Direccion";
+                dgv_admin.Columns["Profesor_estado"].HeaderText = "Estado";
+            }
+
+        }
+        private void dgv_admin_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
     }
 }
