@@ -59,9 +59,7 @@ namespace CapaPresentacion
 
         private void pictureBox_Aula_Click_1(object sender, EventArgs e)
         {
-            frmAula GesFrmAula = new frmAula();
-
-            GesFrmAula.ShowDialog();
+            NodoHijo(new frmAula(Area));
         }
 
         private void pictureBox_Horario_Click_1(object sender, EventArgs e)

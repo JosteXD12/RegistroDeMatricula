@@ -41,11 +41,25 @@ namespace Resgistro_de_Matricula.CapaIntegracion
                 return laAula.consultarAula(Aula_Id);
         }
 
+        public DataSet ActivarAula(int Aula_Id)
+        {
+
+            using (ServicioAula laAula = new ServicioAula())
+                return laAula.ActivarAula(Aula_Id);
+        }
+
         public DataTable ListarAula()
         {
 
             using (ServicioAula laAula = new ServicioAula())
                 return laAula.ListarAula();
+        }
+
+        public DataTable ListarInactivoAula()
+        {
+
+            using (ServicioAula laAula = new ServicioAula())
+                return laAula.ListarInactivoAula();
         }
         public string eliminarAula(int Aula_Id)
         {

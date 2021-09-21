@@ -86,11 +86,38 @@ namespace Resgistro_de_Matricula.CapaLogica.Servicios
             this.cerrarconexion();
             return miDataSet;
         }
+        public DataSet ActivarAula(int Aula_Id)
+        {
+            miComando.CommandText = "ActivarAula";
+            miComando.Parameters.AddWithValue(@"Aula_Id", SqlDbType.Int);
+            miComando.Parameters["Aula_Id"].Value = Aula_Id;
+
+            DataSet miDataSet = new DataSet();
+            this.abrirconexion();
+            miDataSet = this.SeleccinarInformacion(miComando);
+            this.cerrarconexion();
+            return miDataSet;
+        }
+
         public DataTable ListarAula()
         {
             miComando = new SqlCommand();
             Console.WriteLine("Gestor Listar Aula");
             miComando.CommandText = "ListarAula";
+
+            DataSet laAula = new DataSet();
+            this.abrirconexion();
+            laAula = this.SeleccinarInformacion(miComando);
+            DataTable miTabla = laAula.Tables[0];
+
+            return miTabla;
+
+        }
+        public DataTable ListarInactivoAula()
+        {
+            miComando = new SqlCommand();
+            Console.WriteLine("Gestor ListarInactivo Aula");
+            miComando.CommandText = "ListarInactivoAula";
 
             DataSet laAula = new DataSet();
             this.abrirconexion();
