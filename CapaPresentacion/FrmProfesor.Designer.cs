@@ -89,6 +89,7 @@ namespace CapaPresentacion
             // 
             this.btnCargarDatos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(163)))), ((int)(((byte)(165)))));
             this.btnCargarDatos.Font = new System.Drawing.Font("Berlin Sans FB", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCargarDatos.ForeColor = System.Drawing.Color.White;
             this.btnCargarDatos.Location = new System.Drawing.Point(291, 33);
             this.btnCargarDatos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCargarDatos.Name = "btnCargarDatos";
@@ -126,6 +127,7 @@ namespace CapaPresentacion
             this.btnProfesor_Insertar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(163)))), ((int)(((byte)(165)))));
             this.btnProfesor_Insertar.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.btnProfesor_Insertar.Font = new System.Drawing.Font("Berlin Sans FB", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProfesor_Insertar.ForeColor = System.Drawing.Color.White;
             this.btnProfesor_Insertar.Location = new System.Drawing.Point(3, 23);
             this.btnProfesor_Insertar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnProfesor_Insertar.Name = "btnProfesor_Insertar";
@@ -139,6 +141,7 @@ namespace CapaPresentacion
             // 
             this.btnProfesora_Eliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(163)))), ((int)(((byte)(165)))));
             this.btnProfesora_Eliminar.Font = new System.Drawing.Font("Berlin Sans FB", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProfesora_Eliminar.ForeColor = System.Drawing.Color.White;
             this.btnProfesora_Eliminar.Location = new System.Drawing.Point(201, 23);
             this.btnProfesora_Eliminar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnProfesora_Eliminar.Name = "btnProfesora_Eliminar";
@@ -152,6 +155,7 @@ namespace CapaPresentacion
             // 
             this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(163)))), ((int)(((byte)(165)))));
             this.btnModificar.Font = new System.Drawing.Font("Berlin Sans FB", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.ForeColor = System.Drawing.Color.White;
             this.btnModificar.Location = new System.Drawing.Point(99, 66);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnModificar.Name = "btnModificar";
@@ -170,7 +174,7 @@ namespace CapaPresentacion
             this.gpbProfesor_Admin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gpbProfesor_Admin.Name = "gpbProfesor_Admin";
             this.gpbProfesor_Admin.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gpbProfesor_Admin.Size = new System.Drawing.Size(588, 259);
+            this.gpbProfesor_Admin.Size = new System.Drawing.Size(597, 266);
             this.gpbProfesor_Admin.TabIndex = 43;
             this.gpbProfesor_Admin.TabStop = false;
             this.gpbProfesor_Admin.Text = "Admin";
@@ -178,7 +182,7 @@ namespace CapaPresentacion
             // btnEliminar_Admin
             // 
             this.btnEliminar_Admin.Font = new System.Drawing.Font("Berlin Sans FB", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar_Admin.Location = new System.Drawing.Point(326, 224);
+            this.btnEliminar_Admin.Location = new System.Drawing.Point(326, 217);
             this.btnEliminar_Admin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEliminar_Admin.Name = "btnEliminar_Admin";
             this.btnEliminar_Admin.Size = new System.Drawing.Size(99, 27);
@@ -191,7 +195,8 @@ namespace CapaPresentacion
             // 
             this.btnAdmin_Activar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(163)))), ((int)(((byte)(165)))));
             this.btnAdmin_Activar.Font = new System.Drawing.Font("Berlin Sans FB", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdmin_Activar.Location = new System.Drawing.Point(199, 224);
+            this.btnAdmin_Activar.ForeColor = System.Drawing.Color.White;
+            this.btnAdmin_Activar.Location = new System.Drawing.Point(199, 218);
             this.btnAdmin_Activar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdmin_Activar.Name = "btnAdmin_Activar";
             this.btnAdmin_Activar.Size = new System.Drawing.Size(104, 27);
@@ -390,14 +395,15 @@ namespace CapaPresentacion
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1079, 638);
+            this.panel1.Size = new System.Drawing.Size(1077, 645);
             this.panel1.TabIndex = 1;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // FrmProfesor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1079, 638);
+            this.ClientSize = new System.Drawing.Size(1077, 645);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmProfesor";

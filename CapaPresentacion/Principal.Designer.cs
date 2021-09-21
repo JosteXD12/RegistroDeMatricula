@@ -31,6 +31,7 @@ namespace CapaPresentacion
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Ventana_Muestra = new System.Windows.Forms.Panel();
             this.label_LogOut = new System.Windows.Forms.Label();
             this.pictureBox_logout = new System.Windows.Forms.PictureBox();
             this.M_Modulos = new System.Windows.Forms.GroupBox();
@@ -50,7 +51,6 @@ namespace CapaPresentacion
             this.pictureBox_Grupo = new System.Windows.Forms.PictureBox();
             this.pictureBox_Curso = new System.Windows.Forms.PictureBox();
             this.pictureBox_Aula = new System.Windows.Forms.PictureBox();
-            this.Ventana_Muestra = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_logout)).BeginInit();
             this.M_Modulos.SuspendLayout();
@@ -74,8 +74,15 @@ namespace CapaPresentacion
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1259, 620);
+            this.panel1.Size = new System.Drawing.Size(1269, 636);
             this.panel1.TabIndex = 4;
+            // 
+            // Ventana_Muestra
+            // 
+            this.Ventana_Muestra.Location = new System.Drawing.Point(186, 3);
+            this.Ventana_Muestra.Name = "Ventana_Muestra";
+            this.Ventana_Muestra.Size = new System.Drawing.Size(1080, 620);
+            this.Ventana_Muestra.TabIndex = 42;
             // 
             // label_LogOut
             // 
@@ -319,18 +326,11 @@ namespace CapaPresentacion
             this.pictureBox_Aula.TabStop = false;
             this.pictureBox_Aula.Click += new System.EventHandler(this.pictureBox_Aula_Click_1);
             // 
-            // Ventana_Muestra
-            // 
-            this.Ventana_Muestra.Location = new System.Drawing.Point(186, 13);
-            this.Ventana_Muestra.Name = "Ventana_Muestra";
-            this.Ventana_Muestra.Size = new System.Drawing.Size(1070, 601);
-            this.Ventana_Muestra.TabIndex = 42;
-            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1259, 620);
+            this.ClientSize = new System.Drawing.Size(1269, 636);
             this.Controls.Add(this.panel1);
             this.Name = "Principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

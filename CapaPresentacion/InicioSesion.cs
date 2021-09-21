@@ -32,21 +32,32 @@ namespace CapaPresentacion
                     menu.ShowDialog();
                     
                 }
-                else
+                else 
                 {
-                 MessageBox.Show(" El usuario la contraseña es incorrecto ");
+                 MessageBox.Show(" El usuario o la contraseña es incorrecto");
                 }
             }
         }
 
         private void Login_Click(object sender, EventArgs e)
         {
+           // Verificacion_espacios();
             login();
         }
+        //private void Verificacion_espacios()
+        //{
+        //    if (string.IsNullOrEmpty(txtUsuario.Text) || string.IsNullOrEmpty(txtContraseña.Text))
+        //    {
+        //        MessageBox.Show("Alguno de los campos requeridos para iniciar sesion esta vacio");
+        //    }
+        //}
 
-        private void InicioSesion_Load(object sender, EventArgs e)
+        private void txtContraseña_KeyDown(object sender, KeyEventArgs e)
         {
-
+            if(e.KeyData == Keys.Enter)
+            {
+                login();
+            }
         }
     }
 }

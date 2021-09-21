@@ -140,6 +140,7 @@ namespace CapaPresentacion
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(214, 26);
             this.txtContraseña.TabIndex = 5;
+            this.txtContraseña.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtContraseña_KeyDown);
             // 
             // txtUsuario
             // 
@@ -157,7 +158,6 @@ namespace CapaPresentacion
             this.Name = "InicioSesion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InicioSesion";
-            this.Load += new System.EventHandler(this.InicioSesion_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

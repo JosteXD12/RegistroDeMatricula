@@ -84,6 +84,20 @@ namespace Resgistro_de_Matricula.CapaLogica.Servicios
             return miDataSet;
 
         }
+        public DataSet ActivarGrupo(int Grupo_id)
+        {
+            miComando.CommandText = "ActivarGrupo";
+            miComando.Parameters.AddWithValue("@Grupo_id", SqlDbType.Int);
+            miComando.Parameters["@Grupo_id"].Value = Grupo_id;
+
+            DataSet miDataSet = new DataSet();
+            this.abrirconexion();
+            miDataSet = this.SeleccinarInformacion(miComando);
+            this.cerrarconexion();
+
+            return miDataSet;
+
+        }
 
         public DataTable ListarGrupo()
         {
@@ -91,6 +105,20 @@ namespace Resgistro_de_Matricula.CapaLogica.Servicios
             Console.WriteLine("Gestor Listar Horario");
 
             miComando.CommandText = "ListarGrupo";
+            DataSet elGrupo = new DataSet();
+            this.abrirconexion();
+
+            elGrupo = this.SeleccinarInformacion(miComando);
+            DataTable miTabla = elGrupo.Tables[0];
+
+            return miTabla;
+        }
+        public DataTable ListarInactivoGrupo()
+        {
+            miComando = new SqlCommand();
+            Console.WriteLine("Gestor ListarIncativo Horario");
+
+            miComando.CommandText = "ListarInactivoGrupo";
             DataSet elGrupo = new DataSet();
             this.abrirconexion();
 

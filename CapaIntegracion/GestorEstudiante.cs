@@ -50,11 +50,24 @@ namespace Resgistro_de_Matricula.CapaIntegracion
                 return elEstudiante.ConsultarEstudiante(Estudiante_id);
         }
 
+        public DataSet ActivarEstudiante(int Estudiante_id)
+        {
+
+            using (ServicioEstudiante elEstudiante = new ServicioEstudiante())
+                return elEstudiante.ActivarEstudiante(Estudiante_id);
+        }
+
         public DataTable ListarEstudiante()
         {
 
             using (ServicioEstudiante elEstudiante = new ServicioEstudiante())
                 return elEstudiante.ListarEstudiante();
+        }
+        public DataTable ListarInactivoEstudiantes()
+        {
+
+            using (ServicioEstudiante elEstudiante = new ServicioEstudiante())
+                return elEstudiante.ListarIncativoEstudiante();
         }
         public string eliminarEstudiante(int Estudiante_id)
         {

@@ -27,7 +27,7 @@ namespace Resgistro_de_Matricula.CapaIntegracion
             using (ServicioCurso elCurso = new ServicioCurso())
                 return elCurso.InsertarCurso(newCurso);
         }
-        public string ModificarCurso(int Curso_id,string Curso_nombre, string Curso_creditos, string Curso_cupo, string Curso_estado)
+        public string ModificarCurso(int Curso_id, string Curso_nombre, string Curso_creditos, string Curso_cupo, string Curso_estado)
         {
             Curso newCurso = new Curso(Curso_id, Curso_nombre, Curso_creditos, Curso_cupo, Curso_estado);
 
@@ -40,12 +40,24 @@ namespace Resgistro_de_Matricula.CapaIntegracion
             using (ServicioCurso elcurso = new ServicioCurso())
                 return elcurso.ConsultarCurso(Curso_id);
         }
+        public DataSet ActivarCurso(int Curso_id)
+        {
+
+            using (ServicioCurso elcurso = new ServicioCurso())
+                return elcurso.ActivarCurso(Curso_id);
+        }
 
         public DataTable ListarCurso()
         {
 
             using (ServicioCurso elcurso = new ServicioCurso())
                 return elcurso.ListarCurso();
+        }
+        public DataTable ListarInactivoCurso()
+        {
+
+            using (ServicioCurso elcurso = new ServicioCurso())
+                return elcurso.ListarInactivoCurso();
         }
         public string eliminarCurso(int Curso_id)
         {

@@ -42,12 +42,25 @@ namespace Resgistro_de_Matricula.CapaIntegracion
             using (ServicioGrupo elGrupo = new ServicioGrupo())
                 return elGrupo.ConsultarGrupo(Grupo_id);
         }
+        public DataSet ActivarGrupo(int Grupo_id)
+        {
+
+            using (ServicioGrupo elGrupo = new ServicioGrupo())
+                return elGrupo.ActivarGrupo(Grupo_id);
+        }
 
         public DataTable ListarGrupo()
         {
 
             using (ServicioGrupo elGrupo = new ServicioGrupo())
                 return elGrupo.ListarGrupo();
+        }
+
+        public DataTable ListarInactivoGrupo()
+        {
+
+            using (ServicioGrupo elGrupo = new ServicioGrupo())
+                return elGrupo.ListarInactivoGrupo();
         }
         public string eliminarGrupo(int Grupo_id)
         {

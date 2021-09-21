@@ -25,7 +25,7 @@ namespace CapaPresentacion
 
         private void FrmProfesor_Load(object sender, EventArgs e)
         {
-            if(Area != "A1")
+            if (Area != "A1")
             {
                 gpbProfesor_Admin.Visible = false;
             }
@@ -275,6 +275,11 @@ namespace CapaPresentacion
         private void txtProfesor_SegundoApeliido_KeyPress(object sender, KeyPressEventArgs e)
         {
             Program.verficacionLetras(e);
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

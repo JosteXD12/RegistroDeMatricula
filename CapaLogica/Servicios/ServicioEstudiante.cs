@@ -126,6 +126,20 @@ namespace Resgistro_de_Matricula.CapaLogica.Servicios
             return miDataSet;
 
         }
+        public DataSet ActivarEstudiante(int Estudiante_id)
+        {
+            miComando.CommandText = "ActivarEstudiante";
+            miComando.Parameters.AddWithValue("@Estudiante_id", SqlDbType.Int);
+            miComando.Parameters["@Estudiante_id"].Value = Estudiante_id;
+
+            DataSet miDataSet = new DataSet();
+            this.abrirconexion();
+            miDataSet = this.SeleccinarInformacion(miComando);
+            this.cerrarconexion();
+
+            return miDataSet;
+
+        }
 
         public DataTable ListarEstudiante()
         {
@@ -141,6 +155,21 @@ namespace Resgistro_de_Matricula.CapaLogica.Servicios
 
             return miTabla;
         }
+        public DataTable ListarIncativoEstudiante()
+        {
+            miComando = new SqlCommand();
+            Console.WriteLine("Gestor Listar Estudiante");
+
+            miComando.CommandText = "ListarInactivoEstudiantes";
+            DataSet elEstudiante = new DataSet();
+            this.abrirconexion();
+
+            elEstudiante = this.SeleccinarInformacion(miComando);
+            DataTable miTabla = elEstudiante.Tables[0];
+
+            return miTabla;
+        }
+
         public string inactivarEstudiantes(int Estudiante_id)
         {
             miComando.CommandText = "InactivarEstudiante";

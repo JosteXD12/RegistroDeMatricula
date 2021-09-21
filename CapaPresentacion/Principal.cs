@@ -13,7 +13,7 @@ namespace CapaPresentacion
     public partial class Principal : Form
     {
         string Nombre;
-            string Area;
+        string Area;
         public Principal(DataTable datos)
         {
             this.Nombre = datos.Rows[0]["Usuario_nombre"].ToString();
@@ -36,11 +36,7 @@ namespace CapaPresentacion
             this.Ventana_Muestra.Controls.Add(fh);
             this.Ventana_Muestra.Tag = fh;
             fh.Show();
-
-
         }
-        
-
         private void PicBox_Profesor_Click(object sender, EventArgs e)
         {
             NodoHijo(new FrmProfesor(Area));
@@ -48,23 +44,17 @@ namespace CapaPresentacion
 
         private void pictureBox_Estudiante_Click_1(object sender, EventArgs e)
         {
-            FrmEstudiante GesFrmEstudiante = new FrmEstudiante();
-
-            GesFrmEstudiante.ShowDialog();
+            NodoHijo(new FrmEstudiante(Area));
         }
 
         private void pictureBox_Curso_Click_1(object sender, EventArgs e)
         {
-            frmCurso GesFrmCurso = new frmCurso();
-
-            GesFrmCurso.ShowDialog();
+            NodoHijo(new frmCurso(Area));
         }
 
         private void pictureBox_Grupo_Click_1(object sender, EventArgs e)
         {
-            frmGrupo GesFrmGrupo = new frmGrupo();
-
-            GesFrmGrupo.ShowDialog();
+            NodoHijo(new frmGrupo(Area));
         }
 
         private void pictureBox_Aula_Click_1(object sender, EventArgs e)
@@ -92,7 +82,8 @@ namespace CapaPresentacion
 
         private void pictureBox_logout_Click_1(object sender, EventArgs e)
         { 
-            M_Modulos.Visible = false;
+            M_Modulos.Enabled = false;
+            Ventana_Muestra.Visible = false;
             InicioSesion inse = new InicioSesion();
             inse.ShowDialog();
            
