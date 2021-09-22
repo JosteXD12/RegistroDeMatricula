@@ -218,6 +218,16 @@ namespace CapaPresentacion
                     MessageBoxButtons.YesNoCancel, MessageBoxIcon.Exclamation);
             }
         }
+
+        private void txtAula_Descripcion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Program.verficacionLetras(e);
+        }
+
+        private void txtAula_Capacidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Program.verficacionNumero(e);
+        }
     }
 }
     

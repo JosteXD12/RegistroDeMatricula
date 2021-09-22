@@ -64,15 +64,13 @@ namespace CapaPresentacion
 
         private void pictureBox_Horario_Click_1(object sender, EventArgs e)
         {
-            frmHorario GesFrmHorario = new frmHorario();
-
-            GesFrmHorario.ShowDialog();
+            NodoHijo(new frmHorario(Area));
         }
-
-        private void pictureBox_Matricula_Click_1(object sender, EventArgs e)
+        private void pictureBox_Matricula_Click(object sender, EventArgs e)
         {
-
+            NodoHijo(new frmMatricula(Area));
         }
+
         private void pictureBox_Reportes_Click(object sender, EventArgs e)
         {
 

@@ -47,10 +47,10 @@ namespace Resgistro_de_Matricula.CapaLogica.Servicios
             miComando.Parameters.Add("Aula_id", SqlDbType.Int);
             miComando.Parameters["Aula_id"].Value = laMatricula.Aula_id;
 
-            miComando.Parameters.Add("Matricula_comprobante", SqlDbType.Int);
+            miComando.Parameters.Add("Matricula_comprobante", SqlDbType.VarChar);
             miComando.Parameters["Matricula_comprobante"].Value = laMatricula.Matricula_comprobante;
 
-            miComando.Parameters.Add("Matricula_estado", SqlDbType.Int);
+            miComando.Parameters.Add("Matricula_estado", SqlDbType.VarChar);
             miComando.Parameters["Matricula_estado"].Value = laMatricula.Matricula_estado;
 
             respuesta = this.ejecutarsentencia(miComando);
@@ -115,11 +115,38 @@ namespace Resgistro_de_Matricula.CapaLogica.Servicios
             this.cerrarconexion();
             return miDataSet;
         }
+        public DataSet ActivarMatricula(int Matricula_Id)
+        {
+            miComando.CommandText = "ActivarMatricula";
+            miComando.Parameters.AddWithValue(@"Matricula_Id", SqlDbType.Int);
+            miComando.Parameters["Matricula_Id"].Value = Matricula_Id;
+
+            DataSet miDataSet = new DataSet();
+            this.abrirconexion();
+            miDataSet = this.SeleccinarInformacion(miComando);
+
+            this.cerrarconexion();
+            return miDataSet;
+        }
         public DataTable ListarMatricula()
         {
             miComando = new SqlCommand();
             Console.WriteLine("Gestor Listar Matricula");
             miComando.CommandText = "ListarMatricula";
+
+            DataSet laMatricula = new DataSet();
+            this.abrirconexion();
+            laMatricula = this.SeleccinarInformacion(miComando);
+            DataTable miTabla = laMatricula.Tables[0];
+
+            return miTabla;
+
+        }
+        public DataTable ListarInactivoMatricula()
+        {
+            miComando = new SqlCommand();
+            Console.WriteLine("Gestor ListarInactivo Matricula");
+            miComando.CommandText = "ListarInactivoMatricula";
 
             DataSet laMatricula = new DataSet();
             this.abrirconexion();

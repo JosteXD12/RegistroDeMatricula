@@ -33,8 +33,8 @@ namespace Resgistro_de_Matricula.CapaLogica.Servicios
             miComando.Parameters.Add("Horario_descripcion", System.Data.SqlDbType.VarChar);
             miComando.Parameters["Horario_descripcion"].Value = elHorario.Horario_descripcion;
 
-            miComando.Parameters.Add("Horarario_dia", System.Data.SqlDbType.VarChar);
-            miComando.Parameters["Horarario_dia"].Value = elHorario.Horarario_dia;
+            miComando.Parameters.Add("Horario_dia", System.Data.SqlDbType.VarChar);
+            miComando.Parameters["Horario_dia"].Value = elHorario.Horario_dia;
 
             miComando.Parameters.Add("Horario_horaInicio", System.Data.SqlDbType.VarChar);
             miComando.Parameters["Horario_horaInicio"].Value = elHorario.Horario_horaInicio;
@@ -66,8 +66,8 @@ namespace Resgistro_de_Matricula.CapaLogica.Servicios
             miComando.Parameters.Add("Horario_descripcion", System.Data.SqlDbType.VarChar);
             miComando.Parameters["Horario_descripcion"].Value = elHorario.Horario_descripcion;
 
-            miComando.Parameters.Add("Horarario_dia", System.Data.SqlDbType.VarChar);
-            miComando.Parameters["Horarario_dia"].Value = elHorario.Horarario_dia;
+            miComando.Parameters.Add("Horario_dia", System.Data.SqlDbType.VarChar);
+            miComando.Parameters["Horario_dia"].Value = elHorario.Horario_dia;
 
             miComando.Parameters.Add("Horario_horaInicio", System.Data.SqlDbType.VarChar);
             miComando.Parameters["Horario_horaInicio"].Value = elHorario.Horario_horaInicio;
@@ -100,6 +100,20 @@ namespace Resgistro_de_Matricula.CapaLogica.Servicios
             return miDataSet;
 
         }
+        public DataSet ActivarHorario(int Horario_id)
+        {
+            miComando.CommandText = "ActivarHorario";
+            miComando.Parameters.AddWithValue("@Horario_id", SqlDbType.Int);
+            miComando.Parameters["@Horario_id"].Value = Horario_id;
+
+            DataSet miDataSet = new DataSet();
+            this.abrirconexion();
+            miDataSet = this.SeleccinarInformacion(miComando);
+            this.cerrarconexion();
+
+            return miDataSet;
+
+        }
 
         public DataTable ListarHorario()
         {
@@ -107,6 +121,20 @@ namespace Resgistro_de_Matricula.CapaLogica.Servicios
             Console.WriteLine("Gestor Listar Horario");
 
             miComando.CommandText = "ListarHorario";
+            DataSet elHorario = new DataSet();
+            this.abrirconexion();
+
+            elHorario = this.SeleccinarInformacion(miComando);
+            DataTable miTabla = elHorario.Tables[0];
+
+            return miTabla;
+        }
+        public DataTable ListarInactivoHorario()
+        {
+            miComando = new SqlCommand();
+            Console.WriteLine("Gestor ListarInactivo Horario");
+
+            miComando.CommandText = "ListarInactivoHorario";
             DataSet elHorario = new DataSet();
             this.abrirconexion();
 

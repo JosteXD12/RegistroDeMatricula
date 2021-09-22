@@ -156,7 +156,7 @@ namespace CapaPresentacion
             this.pictureBox_Matricula.Size = new System.Drawing.Size(163, 57);
             this.pictureBox_Matricula.TabIndex = 43;
             this.pictureBox_Matricula.TabStop = false;
-            this.pictureBox_Matricula.Click += new System.EventHandler(this.pictureBox_Matricula_Click_1);
+            this.pictureBox_Matricula.Click += new System.EventHandler(this.pictureBox_Matricula_Click);
             // 
             // lblPicbox_profesor
             // 

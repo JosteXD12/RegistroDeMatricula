@@ -46,12 +46,24 @@ namespace Resgistro_de_Matricula.CapaIntegracion
             using (ServicioMatricula laMatricula = new ServicioMatricula())
                 return laMatricula.consultarMatricula(Matricula_Id);
         }
-            
+        public DataSet ActivarMatricula(int Matricula_Id)
+        {
+
+            using (ServicioMatricula laMatricula = new ServicioMatricula())
+                return laMatricula.ActivarMatricula(Matricula_Id);
+        }
+
         public DataTable ListarMatricula()
         {
 
             using (ServicioMatricula laMatricula = new ServicioMatricula())
                 return laMatricula.ListarMatricula();
+        }
+        public DataTable ListarInactivoMatricula()
+        {
+
+            using (ServicioMatricula laMatricula = new ServicioMatricula())
+                return laMatricula.ListarInactivoMatricula();
         }
         public string eliminarMatricula(int Matricula_Id)
         {
