@@ -309,14 +309,14 @@ namespace CapaPresentacion
             this.lblHorario_descripcion.TabIndex = 32;
             this.lblHorario_descripcion.Text = "Descripcion: ";
             // 
-            // Horario
+            // frmHorario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(954, 536);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Horario";
+            this.Name = "frmHorario";
             this.Text = "Horario";
             this.Load += new System.EventHandler(this.Horario_Load);
             this.panel1.ResumeLayout(false);

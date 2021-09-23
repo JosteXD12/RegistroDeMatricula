@@ -90,7 +90,7 @@ namespace CapaPresentacion
             this.btnCargarDatos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(163)))), ((int)(((byte)(165)))));
             this.btnCargarDatos.Font = new System.Drawing.Font("Berlin Sans FB", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCargarDatos.ForeColor = System.Drawing.Color.White;
-            this.btnCargarDatos.Location = new System.Drawing.Point(291, 33);
+            this.btnCargarDatos.Location = new System.Drawing.Point(291, 30);
             this.btnCargarDatos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCargarDatos.Name = "btnCargarDatos";
             this.btnCargarDatos.Size = new System.Drawing.Size(144, 33);

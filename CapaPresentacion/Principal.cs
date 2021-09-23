@@ -73,7 +73,7 @@ namespace CapaPresentacion
 
         private void pictureBox_Reportes_Click(object sender, EventArgs e)
         {
-
+            NodoHijo(new frmReport());
         }
 
         private void pictureBox_logout_Click_1(object sender, EventArgs e)

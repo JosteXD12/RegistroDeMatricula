@@ -14,7 +14,7 @@ namespace CapaPresentacion
     public partial class frmMatricula : Form
     {
 
-        
+
         string Area;
         DataSet dsMatricula = new DataSet();
         DataTable dtMatricula = new DataTable();
@@ -36,6 +36,7 @@ namespace CapaPresentacion
             CargarComboMatricula();
             CargarDatosMatricula();
             CargarGridInactivosMatricula();
+
         }
         private void CargarComboEstudiante()
         {
@@ -113,7 +114,7 @@ namespace CapaPresentacion
                 int HorarioID = int.Parse(cbxHorarioID.SelectedValue.ToString());
                 int AulaID = int.Parse(cbxAulaID.SelectedValue.ToString());
                 Console.WriteLine(cbxEstudianteID.SelectedValue.ToString());
-                Console.WriteLine( "aqui estoy sadsdasdasd");
+                Console.WriteLine("aqui estoy sadsdasdasd");
 
                 laMatricula.InsertarMatricula(EstudianteID, GrupoID, CursoID, ProfesorID,
                     HorarioID, AulaID, txtComprobanteMatricula.Text, "A");
@@ -233,8 +234,8 @@ namespace CapaPresentacion
 
                 dgvMatricula.DataSource = laMatricula.ListarMatricula();
                 dgvMatricula.Columns["Matricula_id"].Visible = false;
-                dgvMatricula.Columns["Estudiante_id"].Visible = false; 
-                dgvMatricula.Columns["Grupo_id"].Visible = false; 
+                dgvMatricula.Columns["Estudiante_id"].Visible = false;
+                dgvMatricula.Columns["Grupo_id"].Visible = false;
                 dgvMatricula.Columns["Curso_id"].Visible = false;
                 dgvMatricula.Columns["Profesor_id"].Visible = false;
                 dgvMatricula.Columns["Horario_id"].Visible = false;
@@ -244,12 +245,12 @@ namespace CapaPresentacion
                 dgvMatricula.Columns["Matricula_estado"].Visible = false;
             }
         }
-        private  void CargarDatos()
+        private void CargarDatos()
         {
             #region Estudiante
             DataSet dsEstudiante = new DataSet();
             DataTable dtEstudiante = new DataTable();
-            using(GestorEstudiante elEstudiante = new GestorEstudiante())
+            using (GestorEstudiante elEstudiante = new GestorEstudiante())
             {
                 int estudiante = int.Parse(dtMatricula.Rows[0]["Estudiante_id"].ToString());
                 dsEstudiante = elEstudiante.ConsultarEstudiante(int.Parse(dtMatricula.Rows[0]["Estudiante_id"].ToString()));
@@ -258,7 +259,81 @@ namespace CapaPresentacion
                 cbxEstudianteID.DisplayMember = "Estudiante_cedula";
                 cbxEstudianteID.ValueMember = "Estudiante_id";
             }
-            #endregion estudiante 
+            #endregion estudiante .
+
+            #region Grupo   
+            DataSet dsGrupo = new DataSet();
+            DataTable dtGrupo = new DataTable();
+            using (GestorGrupo elGrupo = new GestorGrupo())
+            {
+                int Grupo = int.Parse(dtMatricula.Rows[0]["Grupo_id"].ToString());
+                dsGrupo = elGrupo.ConsultarGrupo(int.Parse(dtMatricula.Rows[0]["Grupo_id"].ToString()));
+                dtGrupo = dsGrupo.Tables[0];
+                cbxGrupoID.DataSource = dtGrupo;
+                cbxGrupoID.DisplayMember = "Grupo_descripcion";
+                cbxGrupoID.ValueMember = "Grupo_id";
+            }
+            #endregion Grupo
+
+            #region Curso   
+            DataSet dsCurso = new DataSet();
+            DataTable dtCurso = new DataTable();
+            using (GestorCurso elCurso = new GestorCurso())
+            {
+                int Curso = int.Parse(dtMatricula.Rows[0]["Curso_id"].ToString());
+                dsCurso = elCurso.ConsultarCurso(int.Parse(dtMatricula.Rows[0]["Curso_id"].ToString()));
+                dtCurso = dsCurso.Tables[0];
+                cbxCursoID.DataSource = dtCurso;
+                cbxCursoID.DisplayMember = "Curso_nombre";
+                cbxCursoID.ValueMember = "Curso_id";
+            }
+            #endregion Curso
+
+            #region Profesor   
+            DataSet dsProfesor = new DataSet();
+            DataTable dtProfesor = new DataTable();
+            using (GestorProfesor elProfesor = new GestorProfesor())
+            {
+                int Profesor = int.Parse(dtMatricula.Rows[0]["Profesor_id"].ToString());
+                dsProfesor = elProfesor.consultarProfesor(int.Parse(dtMatricula.Rows[0]["Profesor_id"].ToString()));
+                dtProfesor = dsProfesor.Tables[0];
+                cbxProfesorID.DataSource = dtProfesor;
+                cbxProfesorID.DisplayMember = "Profesor_cedula";
+                cbxProfesorID.ValueMember = "Profesor_id";
+            }
+            #endregion Profesor
+
+            #region Horario   
+            DataSet dsHorario = new DataSet();
+            DataTable dtHorario = new DataTable();
+            using (GestorHorario elHorario = new GestorHorario())
+            {
+                int Horario = int.Parse(dtMatricula.Rows[0]["Horario_id"].ToString());
+                dsHorario = elHorario.ConsultarHorario(int.Parse(dtMatricula.Rows[0]["Horario_id"].ToString()));
+                dtHorario = dsHorario.Tables[0];
+                cbxHorarioID.DataSource = dtHorario;
+                cbxHorarioID.DisplayMember = "Horario_dia";
+                cbxHorarioID.ValueMember = "Horario_id";
+            }
+            #endregion Horario
+
+            #region Aula   
+            DataSet dsAula = new DataSet();
+            DataTable dtAula = new DataTable();
+            using (GestorAula elAula = new GestorAula())
+            {
+                int Aula = int.Parse(dtMatricula.Rows[0]["Aula_id"].ToString());
+                dsAula = elAula.consultarAula(int.Parse(dtMatricula.Rows[0]["Aula_id"].ToString()));
+                dtAula = dsAula.Tables[0];
+                cbxAulaID.DataSource = dtAula;
+                cbxAulaID.DisplayMember = "Aula_capacidad";
+                cbxAulaID.ValueMember = "Aula_id";
+            }
+            #endregion Aula
+
+            txtComprobanteMatricula.Text = this.dtMatricula.Rows[0]["Matricula_comprobante"].ToString();
+
+
         }
 
         private void CargarGridInactivosMatricula()
@@ -290,16 +365,14 @@ namespace CapaPresentacion
         }
         private void CargarDatosMatricula()
         {
-            using (GestorMatricula laMatricula = new GestorMatricula())
-            {
-                CargarComboEstudiante();
-                CargarComboProfesor();
-                CargarComboHorario();
-                CargarComboGrupo();
-                CargarComboCurso();
-                CargarComboAula();
-               
-            }
+            CargarComboEstudiante();
+            CargarComboProfesor();
+            CargarComboHorario();
+            CargarComboGrupo();
+            CargarComboCurso();
+            CargarComboAula();
+
+            
         }
         private void Limpiar()
         {
