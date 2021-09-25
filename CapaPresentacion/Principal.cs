@@ -80,59 +80,52 @@ namespace CapaPresentacion
         { 
             M_Modulos.Enabled = false;
             Ventana_Muestra.Visible = false;
+            this.Close();
             InicioSesion inse = new InicioSesion();
             inse.ShowDialog();
+            
            
         }
 
         private void lblPicbox_profesor_Click(object sender, EventArgs e)
         {
-
+            NodoHijo(new FrmProfesor(Area));
         }
 
         private void label_Estudiante_Click(object sender, EventArgs e)
         {
-
+            NodoHijo(new FrmEstudiante(Area));
         }
 
         private void label_Curso_Click(object sender, EventArgs e)
         {
-
+            NodoHijo(new frmCurso(Area));
         }
 
         private void label_Grupo_Click(object sender, EventArgs e)
         {
-
+            NodoHijo(new frmGrupo(Area));
         }
 
         private void label_Aula_Click(object sender, EventArgs e)
         {
-
+            NodoHijo(new frmAula(Area));
         }
 
         private void label_Horario_Click(object sender, EventArgs e)
         {
-
+            NodoHijo(new frmHorario(Area));
         }
 
         private void label_Matricula_Click(object sender, EventArgs e)
         {
-
+            NodoHijo(new frmMatricula(Area));
         }
 
         private void label_Reporte_Click(object sender, EventArgs e)
         {
-
+            NodoHijo(new frmReport());
         }
 
-        private void label_LogOut_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Principal_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

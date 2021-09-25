@@ -95,7 +95,6 @@ namespace CapaPresentacion
             this.label_LogOut.Size = new System.Drawing.Size(70, 22);
             this.label_LogOut.TabIndex = 41;
             this.label_LogOut.Text = "LogOut";
-            this.label_LogOut.Click += new System.EventHandler(this.label_LogOut_Click);
             // 
             // pictureBox_logout
             // 
@@ -335,7 +334,6 @@ namespace CapaPresentacion
             this.Name = "Principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de maticula :: Modulo Principal";
-            this.Load += new System.EventHandler(this.Principal_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_logout)).EndInit();

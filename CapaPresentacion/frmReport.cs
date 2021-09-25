@@ -21,11 +21,24 @@ namespace CapaPresentacion
 
         private void frmReport_Load(object sender, EventArgs e)
         {
-           ReportDocument miReport = new ReportDocument();
+           //ReportDocument miReport = new ReportDocument();
+           // miReport.Load(@"..\..\cvrProfesor.rpt");
+           // crvReportes.ReportSource = miReport;
+        }
+
+        private void btn_profeosr_Click(object sender, EventArgs e)
+        {
+            ReportDocument miReport = new ReportDocument();
             miReport.Load(@"..\..\cvrProfesor.rpt");
             crvReportes.ReportSource = miReport;
         }
 
-        
+        private void btnBuscarEstudiante_Click(object sender, EventArgs e)
+        {
+            ReportDocument miReport = new ReportDocument();
+            miReport.Load(@"..\..\BuscarEstudiante.rpt");
+            miReport.SetParameterValue("@Estudiante_nombre", textBuscar.Text);
+            crvReportes.ReportSource = miReport;
+        }
     }
 }

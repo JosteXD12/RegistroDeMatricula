@@ -113,9 +113,7 @@ namespace CapaPresentacion
                 int ProfesorID = int.Parse(cbxProfesorID.SelectedValue.ToString());
                 int HorarioID = int.Parse(cbxHorarioID.SelectedValue.ToString());
                 int AulaID = int.Parse(cbxAulaID.SelectedValue.ToString());
-                Console.WriteLine(cbxEstudianteID.SelectedValue.ToString());
-                Console.WriteLine("aqui estoy sadsdasdasd");
-
+                
                 laMatricula.InsertarMatricula(EstudianteID, GrupoID, CursoID, ProfesorID,
                     HorarioID, AulaID, txtComprobanteMatricula.Text, "A");
             }
@@ -332,8 +330,6 @@ namespace CapaPresentacion
             #endregion Aula
 
             txtComprobanteMatricula.Text = this.dtMatricula.Rows[0]["Matricula_comprobante"].ToString();
-
-
         }
 
         private void CargarGridInactivosMatricula()

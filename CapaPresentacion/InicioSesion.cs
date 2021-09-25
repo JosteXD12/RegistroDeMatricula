@@ -43,6 +43,7 @@ namespace CapaPresentacion
         {
            // Verificacion_espacios();
             login();
+            Close();
         }
         //private void Verificacion_espacios()
         //{

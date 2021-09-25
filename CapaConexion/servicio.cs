@@ -14,8 +14,8 @@ namespace Resgistro_de_Matricula.CapaConexion
 
         public servicio()
         {
-            conexion = new SqlConnection(@"user =DESKTOP-O56254G\joste; password=validpassword; server=DESKTOP-O56254G;
-             Trusted_Connection=yes; database= Registro_de_Matricula;connection timeout=30");
+            conexion = new SqlConnection(@" server=(local); integrated security = true;
+              DataBase = Registro_de_Matricula;connection timeout=30");
         }
 
         protected void abrirconexion()
