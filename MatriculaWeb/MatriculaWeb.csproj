@@ -77,10 +77,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="frmCurso.aspx" />
+    <Content Include="frwProfesor.aspx" />
+    <Content Include="frwEstudiante.aspx" />
     <Content Include="frmGrupo.aspx" />
-    <Content Include="frmHorario.aspx" />
-    <Content Include="frmProfesor.aspx" />
+    <Content Include="frwHorario.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="frmInicio.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -91,6 +93,20 @@
     <Compile Include="frmCurso.aspx.designer.cs">
       <DependentUpon>frmCurso.aspx</DependentUpon>
     </Compile>
+    <Compile Include="frwProfesor.aspx.cs">
+      <DependentUpon>frwProfesor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frwProfesor.aspx.designer.cs">
+      <DependentUpon>frwProfesor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frwEstudiante.aspx.cs">
+      <DependentUpon>frwEstudiante.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frwEstudiante.aspx.designer.cs">
+      <DependentUpon>frwEstudiante.aspx</DependentUpon>
+    </Compile>
     <Compile Include="frmGrupo.aspx.cs">
       <DependentUpon>frmGrupo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -98,24 +114,24 @@
     <Compile Include="frmGrupo.aspx.designer.cs">
       <DependentUpon>frmGrupo.aspx</DependentUpon>
     </Compile>
-    <Compile Include="frmHorario.aspx.cs">
-      <DependentUpon>frmHorario.aspx</DependentUpon>
+    <Compile Include="frwHorario.aspx.cs">
+      <DependentUpon>frwHorario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="frmHorario.aspx.designer.cs">
-      <DependentUpon>frmHorario.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="frmProfesor.aspx.cs">
-      <DependentUpon>frmProfesor.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="frmProfesor.aspx.designer.cs">
-      <DependentUpon>frmProfesor.aspx</DependentUpon>
+    <Compile Include="frwHorario.aspx.designer.cs">
+      <DependentUpon>frwHorario.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="frmInicio.aspx.cs">
+      <DependentUpon>frmInicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmInicio.aspx.designer.cs">
+      <DependentUpon>frmInicio.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -128,6 +144,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="ImagenesWeb\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>

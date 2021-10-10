@@ -15,7 +15,7 @@ namespace Resgistro_de_Matricula.CapaConexion
         public servicio()
         {
             conexion = new SqlConnection(@" server=(local); integrated security = true;
-              DataBase = Registro_de_Matricula;connection timeout=30");
+              DataBase = Registro_de_Matricula;connection timeout=2");
         }
 
         protected void abrirconexion()

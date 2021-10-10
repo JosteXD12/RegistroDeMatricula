@@ -138,12 +138,6 @@
     <Compile Include="FrmProfesor.Designer.cs">
       <DependentUpon>FrmProfesor.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmHorario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmHorario.Designer.cs">
-      <DependentUpon>frmHorario.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,9 +185,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmProfesor.resx">
       <DependentUpon>FrmProfesor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmHorario.resx">
-      <DependentUpon>frmHorario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmReport.resx">
       <DependentUpon>frmReport.cs</DependentUpon>

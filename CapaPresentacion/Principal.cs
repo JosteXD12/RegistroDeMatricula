@@ -64,7 +64,7 @@ namespace CapaPresentacion
 
         private void pictureBox_Horario_Click_1(object sender, EventArgs e)
         {
-            NodoHijo(new frmHorario(Area));
+            //NodoHijo(new frmHorario(Area));
         }
         private void pictureBox_Matricula_Click(object sender, EventArgs e)
         {
@@ -114,7 +114,7 @@ namespace CapaPresentacion
 
         private void label_Horario_Click(object sender, EventArgs e)
         {
-            NodoHijo(new frmHorario(Area));
+            //NodoHijo(new frmHorario(Area));
         }
 
         private void label_Matricula_Click(object sender, EventArgs e)
