@@ -257,7 +257,7 @@ namespace CapaPresentacion
                 cbxEstudianteID.DisplayMember = "Estudiante_cedula";
                 cbxEstudianteID.ValueMember = "Estudiante_id";
             }
-            #endregion estudiante .
+            #endregion estudiante
 
             #region Grupo   
             DataSet dsGrupo = new DataSet();

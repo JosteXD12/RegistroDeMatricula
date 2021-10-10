@@ -148,6 +148,7 @@ namespace MatriculaWeb
             TextBoxHorario_Inicio.Text = this.dtHorario.Rows[0]["Horario_horaInicio"].ToString();
             TextBoxHorario_Fin.Text = this.dtHorario.Rows[0]["Horario_horaFin"].ToString();
         }
+
         protected void Limpiar()
         {
             TextBoxHorario_Descripcion.Text = "";

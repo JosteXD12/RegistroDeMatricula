@@ -11,6 +11,7 @@ namespace MatriculaWeb
 {
     public partial class frmEstudiante : System.Web.UI.Page
     {
+
         DataSet dsEstudiante = new DataSet();
         DataTable dtEstudiante = new DataTable();
         protected void Page_Load(object sender, EventArgs e)
@@ -99,13 +100,10 @@ namespace MatriculaWeb
         {
             using (GestorEstudiante elEstudiante = new GestorEstudiante())
             {
-
                 DDListEstudiante.DataSource = elEstudiante.ListarEstudiante();
                 DDListEstudiante.DataValueField = "Estudiante_id";
                 DDListEstudiante.DataTextField = "Estudiante_cedula";
                 DDListEstudiante.DataBind();
-
-
             }
         }
         protected void CargarComboGrupo()

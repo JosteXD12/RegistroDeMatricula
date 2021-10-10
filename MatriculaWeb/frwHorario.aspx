@@ -84,7 +84,7 @@
                             <asp:Label ID="Label5" runat="server" Text="Filtro:" ForeColor="#80ED99"></asp:Label>
                             <asp:DropDownList ID="DDListHorario" runat="server">
                             </asp:DropDownList>
-                            <asp:Button ID="btnHorario_Cargardatos" runat="server" OnClick="CargarDatos_Click" style="height: 29px" Text="Cargar Datos " />
+                            <asp:Button ID="btnHorario_Cargardatos" runat="server" OnClick="CargarDatos_Click" Text="Cargar Datos " BackColor="#38A3A5" ForeColor="White" />
                         </td>
                     </tr>
                     <tr>
@@ -148,9 +148,9 @@
                         <td>&nbsp;</td>
                     </tr>
                     <tr>
-                        <td class="auto-style17">&nbsp;</td>
-                        <td class="auto-style15">&nbsp;</td>
-                        <td>&nbsp;</td>
+                        <td class="auto-style9"></td>
+                        <td class="auto-style16"></td>
+                        <td class="auto-style7"></td>
                     </tr>
                     <tr>
                         <td class="auto-style18" colspan="3">

@@ -9,7 +9,7 @@ using Resgistro_de_Matricula.CapaIntegracion;
 
 namespace MatriculaWeb
 {
-    public partial class frmGrupo : System.Web.UI.Page
+    public partial class Grupo : System.Web.UI.Page
     {
 
         DataSet dsGrupo = new DataSet();
@@ -74,7 +74,7 @@ namespace MatriculaWeb
         }
         protected void btnAdminEliminar_Click(object sender, EventArgs e)
         {
-           
+
             using (GestorGrupo elGrupo = new GestorGrupo())
             {
                 elGrupo.eliminarGrupo(int.Parse(DropDownListadmin.SelectedValue.ToString()));//no sirve 
@@ -92,7 +92,7 @@ namespace MatriculaWeb
                 DDListGrupo.DataValueField = "Grupo_id";
                 DDListGrupo.DataTextField = "Grupo_descripcion";
                 DDListGrupo.DataBind();
-               
+
 
             }
         }
@@ -105,7 +105,7 @@ namespace MatriculaWeb
                 DropDownListadmin.DataValueField = "Grupo_id";
                 DropDownListadmin.DataTextField = "Grupo_descripcion";
                 DropDownListadmin.DataBind();
-               
+
 
             }
         }

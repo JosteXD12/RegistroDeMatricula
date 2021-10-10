@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="frmGrupo.aspx.cs" Inherits="MatriculaWeb.frmGrupo" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Grupo.aspx.cs" Inherits="MatriculaWeb.Grupo" %>
 
 <!DOCTYPE html>
 
@@ -7,15 +7,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
     <style type="text/css">
-        .auto-style3 {
-            height: 26px;
+
+        .auto-style6 {
+            width: 329px;
         }
         .auto-style5 {
             height: 26px;
             width: 329px;
         }
-        .auto-style6 {
-            width: 329px;
+        .auto-style3 {
+            height: 26px;
         }
         .auto-style7 {
             height: 243px;
