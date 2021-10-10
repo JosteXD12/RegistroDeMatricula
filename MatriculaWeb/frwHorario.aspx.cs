@@ -102,7 +102,7 @@ namespace MatriculaWeb
 
                 DDListHorario.DataSource = elHorario.ListarHorario();
                 DDListHorario.DataValueField = "Horario_id";
-                DDListHorario.DataTextField = "Horario_dia";
+                DDListHorario.DataTextField = "Horario_descripcion";
                 DDListHorario.DataBind();
                 //DDListHorario.SelectedIndex = 0;
 
@@ -116,7 +116,7 @@ namespace MatriculaWeb
 
                 DropDownListadmin.DataSource = elHorario.ListarInactivoHorario();
                 DropDownListadmin.DataValueField = "Horario_id";
-                DropDownListadmin.DataTextField = "Horario_dia";
+                DropDownListadmin.DataTextField = "Horario_descripcion";
                 DropDownListadmin.DataBind();
                 //DropDownListadmin.SelectedIndex = 0;
 

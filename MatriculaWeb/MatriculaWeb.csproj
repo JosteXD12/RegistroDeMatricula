@@ -79,7 +79,6 @@
     <Content Include="frmCurso.aspx" />
     <Content Include="frwProfesor.aspx" />
     <Content Include="frwEstudiante.aspx" />
-    <Content Include="frmGrupo.aspx" />
     <Content Include="frwHorario.aspx" />
     <Content Include="Global.asax" />
     <Content Include="frmInicio.aspx" />
@@ -106,13 +105,6 @@
     </Compile>
     <Compile Include="frwEstudiante.aspx.designer.cs">
       <DependentUpon>frwEstudiante.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="frmGrupo.aspx.cs">
-      <DependentUpon>frmGrupo.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="frmGrupo.aspx.designer.cs">
-      <DependentUpon>frmGrupo.aspx</DependentUpon>
     </Compile>
     <Compile Include="frwHorario.aspx.cs">
       <DependentUpon>frwHorario.aspx</DependentUpon>

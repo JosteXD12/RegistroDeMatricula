@@ -33,6 +33,15 @@ namespace MatriculaWeb
         protected global::System.Web.UI.WebControls.Panel Panel1;
 
         /// <summary>
+        /// Control Label6.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label6;
+
+        /// <summary>
         /// Control Label1.
         /// </summary>
         /// <remarks>
@@ -177,13 +186,13 @@ namespace MatriculaWeb
         protected global::System.Web.UI.WebControls.Button Button1;
 
         /// <summary>
-        /// Control Panel2.
+        /// Control PanelAdmin.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panel2;
+        protected global::System.Web.UI.WebControls.Panel PanelAdmin;
 
         /// <summary>
         /// Control Admin.

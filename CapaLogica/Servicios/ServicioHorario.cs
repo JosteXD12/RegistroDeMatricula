@@ -57,8 +57,8 @@ namespace Resgistro_de_Matricula.CapaLogica.Servicios
         public string ModificarHorario(Horario elHorario)
         {
             miComando = new SqlCommand();
-            Console.WriteLine("Gestor Insertar Horario");
-            miComando.CommandText = "InsertaHorario";
+            Console.WriteLine("Gestor Modificar Horario");
+            miComando.CommandText = "ModificarHorario";
 
             miComando.Parameters.Add("Horario_id", System.Data.SqlDbType.Int);
             miComando.Parameters["Horario_id"].Value = elHorario.Horario_id;

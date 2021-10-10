@@ -64,10 +64,10 @@ namespace MatriculaWeb
 
         protected void btnCargaDatos_Click(object sender, EventArgs e)
         {
-            int Horario_id = int.Parse(DDListEstudiante.SelectedValue.ToString());
+            int Estudiante_id = int.Parse(DDListEstudiante.SelectedValue.ToString());
             using (GestorEstudiante elEstudiante = new GestorEstudiante())
             {
-                this.dsEstudiante = elEstudiante.ConsultarEstudiante(Horario_id);
+                this.dsEstudiante = elEstudiante.ConsultarEstudiante(Estudiante_id);
                 this.dtEstudiante = this.dsEstudiante.Tables[0];
             }
             CargarDatosEstudiante();
