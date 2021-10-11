@@ -78,6 +78,7 @@
   <ItemGroup>
     <Content Include="frwAula.aspx" />
     <Content Include="frwCurso.aspx" />
+    <Content Include="frwInicioSesion.aspx" />
     <Content Include="frwMatricula.aspx" />
     <Content Include="frwProfesor.aspx" />
     <Content Include="frwEstudiante.aspx" />
@@ -101,6 +102,13 @@
     </Compile>
     <Compile Include="frwCurso.aspx.designer.cs">
       <DependentUpon>frwCurso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frwInicioSesion.aspx.cs">
+      <DependentUpon>frwInicioSesion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frwInicioSesion.aspx.designer.cs">
+      <DependentUpon>frwInicioSesion.aspx</DependentUpon>
     </Compile>
     <Compile Include="frwMatricula.aspx.cs">
       <DependentUpon>frwMatricula.aspx</DependentUpon>

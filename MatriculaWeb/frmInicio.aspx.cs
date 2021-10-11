@@ -18,5 +18,35 @@ namespace MatriculaWeb
         {
             Response.Redirect("frwEstudiante.aspx");
         }
+
+        protected void btnProfesor_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("frwProfesor.aspx");
+        }
+
+        protected void btnCurso_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("frwCurso.aspx");
+        }
+
+        protected void btnGrupo_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Grupo.aspx");
+        }
+
+        protected void btnAula_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("frwAula.aspx");
+        }
+
+        protected void btnHorario_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("frwHorario.aspx");
+        }
+
+        protected void btnMatricula_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("frwMatricula.aspx");
+        }
     }
 }
